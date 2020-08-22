@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.hjl.dao.TeacherInterface">
+  
+  <resultMap id="Teacher" type="com.hjl.entity.Teacher" ><!--对应的实体类位置 -->
+    <id column="id" property="Id" jdbcType="INTEGER" />
+    <result column="college_id" property="CollegeId" jdbcType="INTEGER" />
+    <result column="teacher_id" property="TeacherId" jdbcType="VARCHAR" />
+    <result column="teacher_name" property="TeacherName" jdbcType="VARCHAR" />
+ 	<result column="teacher_pwd" property="TeacherPwd" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  	<select id="select" resultMap="Teacher">
+  		select * from teacher;
+  	</select>
+  </mapper>
